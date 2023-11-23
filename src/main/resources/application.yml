@@ -1,0 +1,49 @@
+#数据库连接
+spring:
+  datasource:
+     driver-class-name: com.mysql.cj.jdbc.Driver
+     url: jdbc:mysql://localhost:3306/tlias
+     username: root
+     password:57351
+
+#开启mybatis的日志输出
+mybatis:
+  configuration:
+      log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+      #开启数据库表字段 到 实体类属性的驼峰映射
+      map-underscore-to-camel-case: true
+
+
+
+#配置单个文件最大上传大小
+#spring.servlet.multipart.max-file-size=10MB
+
+#配置单个请求最大上传大小(一次请求可以上传多个文件)
+#spring.servlet.multipart.max-request-size=100MB
+
+#自定义的阿里云OSS配置信息
+aliyun:
+  oss:
+    endpoint: oss-cn-beijing.aliyuncs.com
+    accessKeyId: LTAI5tNenzPmPdYZBRuZXo5D
+    accessKeySecret: 1QiCo9YJg1vn4wtYGdtKG1vbV7btH0
+    bucketName: talismanagement
+
+
+  #spring事务管理日志
+  logging:
+    level:
+      org.springframework.jdbc.support.JdbcTransactionManager: debug
+
+  #spring data redis连接
+  spring:
+    redis:
+      host: localhost
+      port: 6379
+      password: 57351
+
+
+
+
+  #练习@ConditionalOnProperty注解
+  name: ssx
